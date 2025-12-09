@@ -13,9 +13,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm run install
+      - run: npm install
       - run: npm run qrcode
-      - uses: actions/upload-artifact@v3
+      # 主要修改在这一行：将 @v3 改为 @v4，并将 path 改为 paths
+      - uses: actions/upload-artifact@v4
         with:
           name: qrcode
-          path: qrcode.png
+          paths: qrcode.png
