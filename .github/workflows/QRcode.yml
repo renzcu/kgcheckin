@@ -1,9 +1,7 @@
 name: QRcode
 on:
   workflow_dispatch:
-  # push:
-  # schedule:
-  #   - cron: 1 16 * * *
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -15,8 +13,7 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm run qrcode
-      # 主要修改在这一行：将 @v3 改为 @v4，并将 path 改为 paths
       - uses: actions/upload-artifact@v4
         with:
           name: qrcode
-          paths: qrcode.png
+          path: qrcode.png  # 关键修正：将 `paths` 改回 `path`
