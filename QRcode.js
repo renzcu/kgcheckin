@@ -14,6 +14,8 @@ async function qrcode() {
       console.log("第一行是key,第二行是二维码链接")
       console.log(result.data.qrcode)
       console.log(result.data.qrcode_img)
+      console.log("----------")
+      console.log(result)
     } else {
       console.log("响应内容")
       console.dir(result, { depth: null })
