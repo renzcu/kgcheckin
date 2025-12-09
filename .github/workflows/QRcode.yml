@@ -15,3 +15,7 @@ jobs:
           node-version: 18
       - run: npm run install
       - run: npm run qrcode
+      - uses: actions/upload-artifact@v3
+        with:
+          name: qrcode
+          path: qrcode.png
